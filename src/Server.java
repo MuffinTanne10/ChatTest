@@ -20,14 +20,15 @@ public class Server {
             InputStream in = socket.getInputStream();
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
-            String s = null;
+            String s;
 
             while ((s = reader.readLine()) != null) {
-                writer.write(s + "\n");
+                writer.write(s +  "\n ");
+                writer.flush();
+
                 System.out.println("Empfangen vom Client: " + s);
             }
 
-            writer.flush();
 
             writer.close();
             reader.close();

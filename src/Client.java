@@ -10,7 +10,7 @@ public class Client {
         Scanner scanner = new Scanner(System.in);
 
         Socket client = new Socket("localhost", 1238);
-        System.out.println("client.Client gestartet!");
+        System.out.println("Client gestartet!");
         OutputStream out = client.getOutputStream();
         PrintWriter writer = new PrintWriter(out);
 
@@ -23,7 +23,7 @@ public class Client {
         writer.write(toServer + "\n");
         writer.flush();
 
-        String s = null;
+        String s;
         while ((s = reader.readLine()) != null) {
             System.out.println("Empfangen vom server.Server:  " + s);
         }
